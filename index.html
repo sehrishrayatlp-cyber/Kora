@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kora - Authentic Food Pills</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; text-align: center; background: #f4f4f4; padding: 20px; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .product { border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; border-radius: 10px; }
+        .price { color: #27ae60; font-weight: bold; font-size: 1.2em; }
+        input[type="number"] { width: 50px; padding: 5px; }
+        .total-section { font-size: 1.5em; margin: 20px 0; color: #333; }
+        .btn-buy { background: #e67e22; color: white; border: none; padding: 15px 30px; border-radius: 5px; cursor: pointer; font-size: 1em; }
+        .payment-info { background: #fff3e0; padding: 10px; margin-top: 20px; border-radius: 5px; font-size: 0.9em; }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 15px; border-radius: 50px; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Kora</h1>
+    <p><em>Authentic and Professional Quality</em></p>
+    <hr>
+
+    <div class="product">
+        <h3>Dimond Super</h3>
+        <p>100% original, Taste Good, sweet, No Burning Smell</p>
+        <p class="price">350 BDT</p>
+        Qty: <input type="number" id="qty1" value="0" min="0" oninput="calculate()">
+    </div>
+
+    <div class="product">
+        <h3>Dimond Local</h3>
+        <p>Originally Teknaf’s Product</p>
+        <p class="price">300 BDT</p>
+        Qty: <input type="number" id="qty2" value="0" min="0" oninput="calculate()">
+    </div>
+
+    <div class="total-section">
+        Total: <span id="totalPrice">0</span> BDT
+    </div>
+
+    <div class="payment-info">
+        <strong>Payment Method:</strong> bKash/Nagad (Personal)<br>
+        Send money to: 01835929968<br>
+        <em>Enter Transaction ID in the next step.</em>
+    </div>
+
+    <button class="btn-buy" onclick="alert('Order received! Please message us on WhatsApp with your Transaction ID.')">Buy Now</button>
+</div>
+
+<a href="https://wa.me/8801835929968" class="whatsapp-float" target="_blank">Chat with Seller</a>
+
+<script>
+    function calculate() {
+        let p1 = document.getElementById('qty1').value * 350;
+        let p2 = document.getElementById('qty2').value * 300;
+        document.getElementById('totalPrice').innerText = p1 + p2;
+    }
+</script>
+
+</body>
+</html>
